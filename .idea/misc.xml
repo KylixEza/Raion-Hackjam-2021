@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/drawable/ic_add.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/drawable/ic_bookmark.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/drawable/ic_cart.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/drawable/ic_chat.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/drawable/ic_home_nav.xml" value="0.2942708333333333" />
@@ -12,13 +13,17 @@
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/drawable/ic_nav_profile.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/drawable/ic_nav_search.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/drawable/ic_plant_nav.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/drawable/ic_temperatur.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/activity_base.xml" value="0.33" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/activity_detail.xml" value="0.33" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/activity_detal.xml" value="0.278125" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/activity_main.xml" value="0.2640625" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/activity_splash.xml" value="0.278125" />
-        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/fragment_profile.xml" value="0.2640625" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/fragment_search.xml" value="0.278125" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/home_fragment.xml" value="0.278125" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/include_hoe.xml" value="0.278125" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/item_list_plant.xml" value="0.67" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/item_list_trending_event.xml" value="0.41232227488151657" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/recommendation_fragment.xml" value="0.278125" />
@@ -26,7 +31,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

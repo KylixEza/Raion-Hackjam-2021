@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RaionHackjam2021">
         <activity
-            android:name=".BaseActivity"
+            android:name=".ui.detail.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SplashActivity"
             android:exported="false" />
 
         <meta-data
