@@ -1,10 +1,12 @@
 package com.timhore.raionhackjam2021.data
 
 import com.timhore.raionhackjam2021.R
+import com.timhore.raionhackjam2021.model.Event
 import com.timhore.raionhackjam2021.model.Plant
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.emitAll
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 
 object Dummy {
 
@@ -21,7 +23,8 @@ object Dummy {
                 "2-3 minggu sekali",
                 "20 - 23 C",
                 "Outdoor and indoor",
-                20000
+                20000,
+                R.drawable.dummy_plant
             ),
 
             Plant(
@@ -35,7 +38,8 @@ object Dummy {
                 "1-2 minggu sekali",
                 "23 - 30 C",
                 "Indoor",
-                150000
+                150000,
+                R.drawable.dummy_plant2
             ),
 
             Plant(
@@ -49,7 +53,8 @@ object Dummy {
                 "Sehari 1 kali",
                 "+- 27 C",
                 "Outdoor/Indoor",
-                120000
+                120000,
+                R.drawable.dummy_plant3
             ),
 
             Plant(
@@ -62,7 +67,8 @@ object Dummy {
                 "Sehari 1 kali",
                 "+- 27 C",
                 "Indoor",
-                180000
+                180000,
+                R.drawable.dummy_plant4
             ),
 
             Plant(
@@ -75,7 +81,7 @@ object Dummy {
                 "3 bulan sekali",
                 "16—34 C",
                 "Outdoor/Indoor",
-                60000
+                R.drawable.dummy_plant5
             ),
 
             Plant(
@@ -88,7 +94,8 @@ object Dummy {
                 "1-2 hari sekali",
                 "21-29 C",
                 "Outdoor/Indoor",
-                125000
+                125000,
+                R.drawable.dummy_plant
             ),
 
             Plant(
@@ -102,7 +109,8 @@ object Dummy {
                 "Jika dirasa kurang lembab",
                 "18 hingga 22 C",
                 "Indoor",
-                160000
+                160000,
+                R.drawable.dummy_plant2
             ),
 
             Plant(
@@ -114,7 +122,8 @@ object Dummy {
                 "1-2 seminggu sekali",
                 "18 - 25 C",
                 "Indoor",
-                55000
+                55000,
+                R.drawable.dummy_plant3
             ),
 
             Plant(
@@ -127,7 +136,8 @@ object Dummy {
                 "1- 3 hari sekali",
                 "18 - 23 C",
                 "Indoor",
-                220000
+                220000,
+                R.drawable.dummy_plant4
             ),
 
             Plant(
@@ -141,9 +151,92 @@ object Dummy {
                 "1- 2 hari sekali",
                 "27–30 C",
                 "Indoor",
-                200000
+                200000,
+                R.drawable.dummy_plant5
             )
         )
         emit(listOfPlants)
-    }
+    }.flowOn(Dispatchers.IO)
+
+    fun getAllTrendingEvents(): Flow<List<Event>> = flow {
+        val listOfTrendingEvents: List<Event> = arrayListOf(
+            Event(
+                "EVENT001",
+                "TANAM",
+                R.drawable.trending_event_banner1
+            ),
+
+            Event(
+                "EVENT002",
+                "TANAM",
+                R.drawable.trending_event_banner2
+            ),
+
+            Event(
+                "EVENT003",
+                "TANAM",
+                R.drawable.trending_event_banner3
+            ),
+        )
+        emit(listOfTrendingEvents)
+    }.flowOn(Dispatchers.IO)
+
+    fun getAllTrendingPlants(): Flow<List<Plant>> = flow {
+        val listOfTrendingPlants = arrayListOf<Plant>(
+            Plant(
+                "PLANT006",
+                "Keladi Amazon",
+                "Caladium",
+                "Salah satu tanaman hias yang sedang populer belakangan ini adalah tanaman " +
+                    "keladi. Tanaman keladi sendiri adalah tanaman tropis dengan daun yang berukuran " +
+                    "cukup besar",
+                "1-2 hari sekali",
+                "21-29 C",
+                "Outdoor/Indoor",
+                125000,
+                R.drawable.dummy_plant
+            ),
+
+            Plant(
+                "PLANT007",
+                "Begonia Polkadot",
+                "Begonia Malculata",
+                "Begonia Maculata yang biasa disebut Begonia Polkadot, tidak diragukan lagi " +
+                    "adalah salah satu spesies tanaman dalam ruangan yang sangat cantik. Tumbuhan " +
+                    "eksotis ini mendapatkan namanya dari daun berbintik perak yang unik dan bagian " +
+                    "bawah merahnya",
+                "Jika dirasa kurang lembab",
+                "18 hingga 22 C",
+                "Indoor",
+                160000,
+                R.drawable.dummy_plant2
+            ),
+
+            Plant(
+                "PLANT009",
+                "Karet Kebo",
+                "Ficus elastica",
+                "Karet Kebo menjadi salah satu tanaman hias primadona di kalangan penghobi " +
+                    "karena mudah dalam perawatan. Selain mudah, tanaman ini juga tetap indah di liat, " +
+                    "memiliki kesan minimalis, dan juga memiliki berbagai manfaat",
+                "1- 3 hari sekali",
+                "18 - 23 C",
+                "Indoor",
+                220000,
+                R.drawable.dummy_plant4
+            ),
+        )
+
+        emit(listOfTrendingPlants)
+    }.flowOn(Dispatchers.IO)
+
+    fun getDetailPlant(plantId: String) = flow<Plant> {
+        getAllPlants().map { listPlants ->
+            listPlants.forEach { plant ->
+                if (plant.id == plantId) {
+                    emit(plant)
+                }
+            }
+        }
+    }.flowOn(Dispatchers.IO)
 }

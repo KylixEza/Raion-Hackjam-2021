@@ -2,11 +2,15 @@ package com.timhore.raionhackjam2021.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.timhore.raionhackjam2021.adapter.diffutil.PlantDiffUtilCallback
 import com.timhore.raionhackjam2021.databinding.ItemListPlantBinding
 import com.timhore.raionhackjam2021.model.Plant
+import com.timhore.raionhackjam2021.ui.home.HomeFragmentDirections
+import com.timhore.raionhackjam2021.util.Formatting
 
 class PlantAdapter: RecyclerView.Adapter<PlantAdapter.PlantViewHolder>() {
 
@@ -40,7 +44,18 @@ class PlantAdapter: RecyclerView.Adapter<PlantAdapter.PlantViewHolder>() {
 
     inner class PlantViewHolder(private val view: ItemListPlantBinding): RecyclerView.ViewHolder(view.root) {
         fun bind(plant: Plant) {
-
+            view.apply {
+                Glide.with(itemView.context)
+                    .load(plant.image)
+                    .into(ivPlant)
+                tvTitle.text = plant.name
+                tvPrice.text = String.format("Rp ${Formatting.rupiahCurrencyFormatting(plant.price)}")
+            }
+            itemView.setOnClickListener {
+                it.findNavController().navigate(
+                    HomeFragmentDirections.actionHomeDestinationToDetailActivity(plant.id)
+                )
+            }
         }
     }
 }
