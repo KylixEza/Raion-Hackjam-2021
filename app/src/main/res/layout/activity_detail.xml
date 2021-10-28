@@ -9,6 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         tools:context=".ui.detail.DetailActivity">
 
         <io.github.florent37.shapeofview.shapes.ArcView
@@ -155,7 +156,91 @@
             app:layout_constraintTop_toBottomOf="@id/tv_details"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="20 - 25 C"/>
-        
+
+        <TextView
+            android:id="@+id/tv_watering"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:layout_marginEnd="60dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="12sp"
+            android:textColor="@color/dark_green"
+            app:drawableTopCompat="@drawable/small_watering"
+            app:layout_constraintTop_toTopOf="@id/tv_temperature"
+            app:layout_constraintEnd_toStartOf="@id/tv_temperature"
+            app:layout_constraintBottom_toBottomOf="@id/tv_temperature"
+            tools:text="2 kali sehari"/>
+
+        <TextView
+            android:id="@+id/tv_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:layout_marginStart="60dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="12sp"
+            android:textColor="@color/dark_green"
+            app:drawableTopCompat="@drawable/small_place"
+            app:layout_constraintTop_toTopOf="@id/tv_temperature"
+            app:layout_constraintStart_toEndOf="@id/tv_temperature"
+            app:layout_constraintBottom_toBottomOf="@id/tv_temperature"
+            tools:text="Indoor"/>
+
+        <ImageView
+            android:id="@+id/iv_decrease"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/ic_remove"
+            app:layout_constraintStart_toStartOf="@id/tv_details"
+            app:layout_constraintTop_toBottomOf="@id/tv_watering"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_total"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="4dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/soft_dark_green"
+            app:layout_constraintTop_toTopOf="@id/iv_decrease"
+            app:layout_constraintBottom_toBottomOf="@id/iv_decrease"
+            app:layout_constraintStart_toEndOf="@id/iv_decrease">
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunito_semibold"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="3"/>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_increase"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_add"
+            app:layout_constraintStart_toEndOf="@id/cv_total"
+            app:layout_constraintTop_toTopOf="@id/cv_total"
+            app:layout_constraintBottom_toBottomOf="@id/cv_total"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_insert_to_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/nude_dark_green"
+            android:fontFamily="@font/nunito_semibold"
+            android:text="@string/insert_to_cart"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_increase"
+            app:layout_constraintBottom_toBottomOf="@id/iv_increase"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
