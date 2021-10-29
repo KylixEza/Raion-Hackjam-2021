@@ -3,7 +3,7 @@ package com.timhore.raionhackjam2021.adapter.diffutil
 import androidx.recyclerview.widget.DiffUtil
 import com.timhore.raionhackjam2021.model.Event
 
-class EventDiffUtilCallback: DiffUtil.Callback() {
+class ArticleDiffUtilCallback: DiffUtil.Callback() {
 
     private var oldEventList: List<Event> = ArrayList()
     private var newEventList: List<Event> = ArrayList()

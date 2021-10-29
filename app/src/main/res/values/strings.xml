@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Raion Hackjam 2021</string>
+    <string name="app_name">Nandur</string>
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="recommendation">Recommendation</string>
     <string name="profile">Profile</string>
     <string name="trending_events">Trending Events</string>
     <string name="show_all">Show all</string>
-    <string name="lets_shop">Let\'s Shop!</string>
+    <string name="lets_shop">Rekomendasi Tanaman di Surabaya</string>
     <string name="trending_plants">Trending Plants 2021</string>
     <string name="detail">Details</string>
     <string name="insert_to_cart">Masukkan ke Keranjang</string>

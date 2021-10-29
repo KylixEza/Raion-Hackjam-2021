@@ -19,13 +19,14 @@
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/activity_detal.xml" value="0.278125" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/activity_main.xml" value="0.2640625" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/activity_splash.xml" value="0.278125" />
-        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/fragment_profile.xml" value="0.2640625" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/fragment_search.xml" value="0.278125" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/home_fragment.xml" value="0.278125" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/include_hoe.xml" value="0.278125" />
-        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/item_list_plant.xml" value="0.67" />
-        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/item_list_trending_event.xml" value="0.41232227488151657" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/item_list_home_recommendation.xml" value="0.278125" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/item_list_plant.xml" value="0.33" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/item_list_trending_event.xml" value="0.67" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/layout/recommendation_fragment.xml" value="0.278125" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/RaionHackjam2021/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.278125" />
       </map>

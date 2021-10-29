@@ -17,13 +17,12 @@ class DetailActivity : AppCompatActivity() {
 
     private val viewModel: DetailViewModel by viewModel()
     private val viewBinding: ActivityDetailBinding by viewBinding()
-    private val args: DetailActivityArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val plantId = args.plantId
+        val plantId = "PLANT001"
 
         viewModel.getDetailPlant(plantId).observe(this, ::detailPlantObserver)
     }

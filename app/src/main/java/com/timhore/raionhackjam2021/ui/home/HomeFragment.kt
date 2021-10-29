@@ -5,10 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.timhore.raionhackjam2021.adapter.PlantAdapter
-import com.timhore.raionhackjam2021.adapter.TrendingEventAdapter
+import com.timhore.raionhackjam2021.adapter.ArticleAdapter
+import com.timhore.raionhackjam2021.adapter.HomeRecommendationAdapter
 import com.timhore.raionhackjam2021.databinding.FragmentHomeBinding
 import com.timhore.raionhackjam2021.model.Event
 import com.timhore.raionhackjam2021.model.Plant
@@ -19,28 +19,28 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding
     private val viewModel: HomeViewModel by viewModel()
-    private lateinit var trendingEventAdapter: TrendingEventAdapter
+    private lateinit var articleAdapter: ArticleAdapter
     private lateinit var trendingPlantAdapter: PlantAdapter
-    private lateinit var homeShopAdapter: PlantAdapter
+    private lateinit var homeShopAdapter: HomeRecommendationAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        trendingEventAdapter = TrendingEventAdapter()
+        articleAdapter = ArticleAdapter()
         trendingPlantAdapter = PlantAdapter()
-        homeShopAdapter = PlantAdapter()
+        homeShopAdapter = HomeRecommendationAdapter()
 
         binding?.apply {
             rvTrendingEvents.apply {
-                adapter = trendingEventAdapter
+                adapter = articleAdapter
                 layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                 viewModel.getAllTrendingEvents().observe(viewLifecycleOwner, ::trendingEventsObserver)
             }
@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
             }
             rvLetsShopPlants.apply {
                 adapter = homeShopAdapter
-                layoutManager = GridLayoutManager(requireContext(), 2)
+                layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                 viewModel.getAllPlants().observe(viewLifecycleOwner, ::homeShopObserver)
             }
         }
@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
 
     private fun trendingPlantsObserver(list: List<Plant>?) = list?.let { trendingPlantAdapter.setAllItems(it) }
 
-    private fun trendingEventsObserver(list: List<Event>?) = list?.let { trendingEventAdapter.setAllItems(it) }
+    private fun trendingEventsObserver(list: List<Event>?) = list?.let { articleAdapter.setAllItems(it) }
 
 
     override fun onDestroy() {

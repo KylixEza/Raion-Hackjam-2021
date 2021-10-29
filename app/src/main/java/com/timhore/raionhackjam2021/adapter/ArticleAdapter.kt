@@ -6,16 +6,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.timhore.raionhackjam2021.adapter.diffutil.EventDiffUtilCallback
-import com.timhore.raionhackjam2021.databinding.ItemListTrendingEventBinding
+import com.timhore.raionhackjam2021.adapter.diffutil.ArticleDiffUtilCallback
+import com.timhore.raionhackjam2021.databinding.ItemListArticleBinding
 import com.timhore.raionhackjam2021.model.Event
 
-class TrendingEventAdapter: RecyclerView.Adapter<TrendingEventAdapter.TrendingEventViewHolder>() {
+class ArticleAdapter: RecyclerView.Adapter<ArticleAdapter.TrendingEventViewHolder>() {
 
     private val listOfTrendingEvent = ArrayList<Event>()
 
     fun setAllItems(data: List<Event>) {
-        val diffCallback = EventDiffUtilCallback()
+        val diffCallback = ArticleDiffUtilCallback()
         diffCallback.setEventList(listOfTrendingEvent, data)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
 
@@ -27,7 +27,7 @@ class TrendingEventAdapter: RecyclerView.Adapter<TrendingEventAdapter.TrendingEv
     }
 
     inner class TrendingEventViewHolder(
-        private val view: ItemListTrendingEventBinding
+        private val view: ItemListArticleBinding
         ): RecyclerView.ViewHolder(view.root) {
 
         fun bind(event: Event) {
@@ -42,7 +42,7 @@ class TrendingEventAdapter: RecyclerView.Adapter<TrendingEventAdapter.TrendingEv
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrendingEventViewHolder {
-        val view = ItemListTrendingEventBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val view = ItemListArticleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TrendingEventViewHolder(view)
     }
 

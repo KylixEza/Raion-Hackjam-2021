@@ -163,19 +163,19 @@ object Dummy {
             Event(
                 "EVENT001",
                 "TANAM",
-                R.drawable.trending_event_banner1
+                R.drawable.article1
             ),
 
             Event(
                 "EVENT002",
                 "TANAM",
-                R.drawable.trending_event_banner2
+                R.drawable.article2
             ),
 
             Event(
                 "EVENT003",
                 "TANAM",
-                R.drawable.trending_event_banner3
+                R.drawable.article3
             ),
         )
         emit(listOfTrendingEvents)
