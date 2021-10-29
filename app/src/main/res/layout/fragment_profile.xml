@@ -1,13 +1,359 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".ui.profile.ProfileFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_chat"
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/rectangle_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/user_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-50dp"
+            android:src="@drawable/profile_pic_dummy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Halo Tyrone"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="20sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+            app:layout_constraintStart_toEndOf="@+id/user_pic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Bagaimana Harimu?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/user_pic"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:background="#00F6FDFF"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_pic">
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="#D8F3DC">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/ic_cart2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingTop="85dp"
+                    android:text="Keranjang Belanja"
+                    android:textColor="#5F7A61"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingTop="105dp"
+                    android:text="Cek Transaksi mu Disini"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:background="#00F6FDFF"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_pic">
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="#D8F3DC">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/ic_cart2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingTop="85dp"
+                    android:text="Keranjang Belanja"
+                    android:textColor="#5F7A61"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingTop="105dp"
+                    android:text="Cek Transaksi mu Disini"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/menuDataPribadi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cart"
+            android:layout_marginTop="32dp"
+            android:layout_margin="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Pribadi"
+                android:fontFamily="@font/poppins"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="Periksa Data Diri Anda"
+                android:textColor="#BF000000" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:layout_marginTop="50dp"/>
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:background="@color/white"
+                android:src="@drawable/ic_arrowright"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/PrivacyPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/menuDataPribadi"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Privacy Policy"
+                android:fontFamily="@font/poppins"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="Baca Privacy Policy Aplikasi nama"
+                android:textColor="#BF000000" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:layout_marginTop="50dp"/>
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:background="@color/white"
+                android:src="@drawable/ic_arrowright"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/AboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/PrivacyPolicy"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tentang Nama Apps"
+                android:fontFamily="@font/poppins"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="Cari Tahu Mengenai Kita Lebih Dalam"
+                android:textColor="#BF000000" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:layout_marginTop="50dp"/>
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:background="@color/white"
+                android:src="@drawable/ic_arrowright"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FAQs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/AboutUs"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FAQs"
+                android:fontFamily="@font/poppins"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="Lihat Jawaban Dari Pertanyaan Yang Sering Diajukan"
+                android:textColor="#BF000000" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:layout_marginTop="50dp"/>
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:background="@color/white"
+                android:src="@drawable/ic_arrowright"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/HelpCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/FAQs"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pusat Bantuan"
+                android:fontFamily="@font/poppins"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="Kontak Customer Service Kami"
+                android:textColor="#BF000000" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:layout_marginTop="50dp"/>
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:background="@color/white"
+                android:src="@drawable/ic_arrowright"/>
+
+        </FrameLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
