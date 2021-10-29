@@ -57,7 +57,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tv_trending_events"
+                android:id="@+id/tv_diskon_spesial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -77,8 +77,8 @@
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/black"
                 android:textSize="10sp"
-                app:layout_constraintTop_toTopOf="@id/tv_trending_events"
-                app:layout_constraintBottom_toBottomOf="@id/tv_trending_events"
+                app:layout_constraintTop_toTopOf="@id/tv_diskon_spesial"
+                app:layout_constraintBottom_toBottomOf="@id/tv_diskon_spesial"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_trending_events"
+                app:layout_constraintTop_toBottomOf="@id/tv_diskon_spesial"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
             <TextView
