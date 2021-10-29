@@ -5,21 +5,21 @@ import com.timhore.raionhackjam2021.model.Event
 
 class ArticleDiffUtilCallback: DiffUtil.Callback() {
 
-    private var oldEventList: List<Event> = ArrayList()
-    private var newEventList: List<Event> = ArrayList()
+    private var oldArticleList: List<Event> = ArrayList()
+    private var newArticleList: List<Event> = ArrayList()
 
     fun setEventList(oldList: List<Event>, newList: List<Event>) {
-        oldEventList = oldList
-        newEventList = newList
+        oldArticleList = oldList
+        newArticleList = newList
     }
 
-    override fun getOldListSize(): Int = oldEventList.size
+    override fun getOldListSize(): Int = oldArticleList.size
 
-    override fun getNewListSize(): Int = newEventList.size
+    override fun getNewListSize(): Int = newArticleList.size
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
-        oldEventList[oldItemPosition].eventId == newEventList[newItemPosition].eventId
+        oldArticleList[oldItemPosition].eventId == newArticleList[newItemPosition].eventId
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
-        oldEventList[oldItemPosition].title == newEventList[newItemPosition].title
+        oldArticleList[oldItemPosition].title == newArticleList[newItemPosition].title
 }

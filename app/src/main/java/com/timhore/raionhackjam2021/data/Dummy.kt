@@ -24,7 +24,10 @@ object Dummy {
                 "20 - 23 C",
                 "Outdoor and indoor",
                 20000,
-                R.drawable.dummy_plant
+                R.drawable.dummy_plant,
+                "Kota Malang",
+                4.8,
+                23
             ),
 
             Plant(
@@ -39,7 +42,10 @@ object Dummy {
                 "23 - 30 C",
                 "Indoor",
                 150000,
-                R.drawable.dummy_plant2
+                R.drawable.dummy_plant2,
+                "Kota Blitar",
+                5.0,
+                100
             ),
 
             Plant(
@@ -54,7 +60,10 @@ object Dummy {
                 "+- 27 C",
                 "Outdoor/Indoor",
                 120000,
-                R.drawable.dummy_plant3
+                R.drawable.dummy_plant3,
+                "Kota Surabaya",
+                4.8,
+                19
             ),
 
             Plant(
@@ -68,7 +77,10 @@ object Dummy {
                 "+- 27 C",
                 "Indoor",
                 180000,
-                R.drawable.dummy_plant4
+                R.drawable.dummy_plant4,
+                "Kota Surabaya",
+                4.6,
+                10
             ),
 
             Plant(
@@ -81,7 +93,11 @@ object Dummy {
                 "3 bulan sekali",
                 "16—34 C",
                 "Outdoor/Indoor",
-                R.drawable.dummy_plant5
+                100000,
+                R.drawable.dummy_plant5,
+                "Kota Malang",
+                4.8,
+                21
             ),
 
             Plant(
@@ -95,7 +111,10 @@ object Dummy {
                 "21-29 C",
                 "Outdoor/Indoor",
                 125000,
-                R.drawable.dummy_plant
+                R.drawable.dummy_plant,
+                "Kota Trenggalek",
+                4.9,
+                36
             ),
 
             Plant(
@@ -110,7 +129,10 @@ object Dummy {
                 "18 hingga 22 C",
                 "Indoor",
                 160000,
-                R.drawable.dummy_plant2
+                R.drawable.dummy_plant2,
+                "Kota Bekasi",
+                4.5,
+                10
             ),
 
             Plant(
@@ -123,7 +145,10 @@ object Dummy {
                 "18 - 25 C",
                 "Indoor",
                 55000,
-                R.drawable.dummy_plant3
+                R.drawable.dummy_plant3,
+                "Kota Jakarta",
+                4.9,
+                30
             ),
 
             Plant(
@@ -137,7 +162,10 @@ object Dummy {
                 "18 - 23 C",
                 "Indoor",
                 220000,
-                R.drawable.dummy_plant4
+                R.drawable.dummy_plant4,
+                "Kota Kediri",
+                4.4,
+                20
             ),
 
             Plant(
@@ -152,7 +180,10 @@ object Dummy {
                 "27–30 C",
                 "Indoor",
                 200000,
-                R.drawable.dummy_plant5
+                R.drawable.dummy_plant5,
+                "Kota Malang",
+                4.9,
+                25
             )
         )
         emit(listOfPlants)
@@ -239,4 +270,41 @@ object Dummy {
             }
         }
     }.flowOn(Dispatchers.IO)
+
+    fun getPlantsSearch(query: String) = flow<List<Plant>> {
+        val results = ArrayList<Plant>()
+
+        getAllPlants().map { list ->
+            list.forEach { plant ->
+                if (plant.name.contains(query))
+                    results.add(plant)
+            }
+            emit(results)
+        }
+
+    }.flowOn(Dispatchers.IO)
+
+    fun getProductsSearch(query: String) = flow<List<Plant>> {
+        val results = ArrayList<Plant>()
+
+        getAllPlants().map { list ->
+            list.forEach { plant ->
+                if (plant.name.contains(query, true))
+                    results.add(plant)
+            }
+            emit(results)
+        }
+    }
+
+    fun getArticleSearch(query: String) = flow<List<Plant>> {
+        val results = ArrayList<Plant>()
+
+        getAllPlants().map { list ->
+            list.forEach { plant ->
+                if (plant.name.contains(query))
+                    results.add(plant)
+            }
+            emit(results)
+        }
+    }
 }

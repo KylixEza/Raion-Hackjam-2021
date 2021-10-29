@@ -9,5 +9,8 @@ data class Plant(
     val temperature: String = "",
     val place: String = "",
     val price: Int = 0,
-    val image: Int = 0
+    val image: Int = 0,
+    val location: String = "",
+    val rating: Double = 0.0,
+    val sold: Int = 0
 )
