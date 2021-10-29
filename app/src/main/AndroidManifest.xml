@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RaionHackjam2021">
         <activity
+            android:name=".ui.detail.product.ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detail.plant.PlantDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.Login.LoginActivity"
             android:exported="false" />
         <activity

@@ -15,7 +15,8 @@
         android:fontFamily="@font/poppins"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/app_name_home"
+        android:text="nandur"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +39,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginEnd="18dp"
-        android:src="@drawable/ic_cart2"
+        android:src="@drawable/ic_cart"
         app:layout_constraintTop_toTopOf="@id/tv_app_name"
         app:layout_constraintEnd_toStartOf="@id/iv_chat"
         app:layout_constraintBottom_toBottomOf="@id/tv_app_name"/>

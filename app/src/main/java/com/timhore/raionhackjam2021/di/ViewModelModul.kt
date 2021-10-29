@@ -22,4 +22,5 @@ val viewModelModule = module {
     viewModel { ArticleViewModel() }
     viewModel { PlantViewModel() }
     viewModel { ProductViewModel() }
+    viewModel { RecommendationViewModel() }
 }

@@ -308,5 +308,114 @@ object Dummy {
         }
     }
 
-    
+    fun getRecommendationPlant() = flow<List<Plant>> {
+        emit(
+            arrayListOf(
+                Plant(
+                    "PLANT001",
+                    "Lidah Buaya",
+                    "Aloe Vera",
+                    "Tanaman ini termasuk kedalam salah satu jenis sukulen yang juga termasuk " +
+                        "salah satu jenis yang mudah ditemui di rumah-rumah. Selain mudah soal perawatan, " +
+                        "aloe vera sendiri terkenal akan manfaatnya bagi kesehatan dan kecantikan seperti " +
+                        "membantu menyembuh bekas luka bakar",
+                    "2-3 minggu sekali",
+                    "20 - 23 C",
+                    "Outdoor and indoor",
+                    20000,
+                    R.drawable.dummy_plant,
+                    "Kota Malang",
+                    4.8,
+                    23
+                ),
+
+                Plant(
+                    "PLANT002",
+                    "Janda Bolong",
+                    "Monstera",
+                    "monstera atau janda bolong tanaman hias saat ini menjadi salah satu tanaman " +
+                        "hias yang paling populer dan banyak digandrungi karena keunikan bentuk daunnya " +
+                        "yang bolong-bolong. Tanaman ini hidup dengan baik di tempat lembab seperti di tropis " +
+                        "dan tidak dapat terlalu terkena matahari",
+                    "1-2 minggu sekali",
+                    "23 - 30 C",
+                    "Indoor",
+                    150000,
+                    R.drawable.dummy_plant2,
+                    "Kota Blitar",
+                    5.0,
+                    100
+                ),
+
+                Plant(
+                    "PLANT003",
+                    "Kuping Gajah",
+                    "Anthurium Crystallinum",
+                    "Tanaman kuping gajah atau Anthurium crystallinum adalah tanaman yang " +
+                        "berasal dari Amerika Tengah dan Selatan. Ia adalah tanaman yang sangat cantik " +
+                        "dengan daun berbentuk hati. Daunnya yang indah berwarna hijau tua atau ungu " +
+                        "kemerahan juga memiliki urat putih dalam yang membuatnya semakin menonjol secara visual",
+                    "Sehari 1 kali",
+                    "+- 27 C",
+                    "Outdoor/Indoor",
+                    120000,
+                    R.drawable.dummy_plant3,
+                    "Kota Surabaya",
+                    4.8,
+                    19
+                ),
+
+                Plant(
+                    "PLANT004",
+                    "Aglaonema Red Ruby",
+                    "Aglaonema Red Ruby",
+                    "Aglaonema memiliki banyak sekali jenis, salah satunya adalah Red Ruby yang " +
+                        "memiliki ciri khas warna merah ruby dan sedikit hijau nya. Tanaman ini cukup " +
+                        "mudah untuk dirawat dan memiliki umur panjang",
+                    "Sehari 1 kali",
+                    "+- 27 C",
+                    "Indoor",
+                    180000,
+                    R.drawable.dummy_plant4,
+                    "Kota Surabaya",
+                    4.6,
+                    10
+                ),
+
+                Plant(
+                    "PLANT005",
+                    "Cactus Golden Barrel",
+                    "Echinocactus Grusonii",
+                    "Kaktus ini sering disebut dengan golden barell atau gentong emas seperti " +
+                        "warnanya yang kuning keemasan. Kaktus ini unik soalnya memiliki duri berwarna " +
+                        "keemasan. Banyak duri di sekitar batangnya",
+                    "3 bulan sekali",
+                    "16—34 C",
+                    "Outdoor/Indoor",
+                    100000,
+                    R.drawable.dummy_plant5,
+                    "Kota Malang",
+                    4.8,
+                    21
+                ),
+
+                Plant(
+                    "PLANT006",
+                    "Keladi Amazon",
+                    "Caladium",
+                    "Salah satu tanaman hias yang sedang populer belakangan ini adalah tanaman " +
+                        "keladi. Tanaman keladi sendiri adalah tanaman tropis dengan daun yang berukuran " +
+                        "cukup besar",
+                    "1-2 hari sekali",
+                    "21-29 C",
+                    "Outdoor/Indoor",
+                    125000,
+                    R.drawable.dummy_plant,
+                    "Kota Trenggalek",
+                    4.9,
+                    36
+                ),
+            )
+        )
+    }.flowOn(Dispatchers.IO)
 }
