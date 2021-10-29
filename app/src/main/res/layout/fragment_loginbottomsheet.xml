@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
-        android:text="Lorem ipsum dolor sit \namet"
+        android:text="Login dengan akun nandur mu\natau dengan media lainnya"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header" />
@@ -98,6 +98,7 @@
         android:backgroundTint="#205036"
         android:fontFamily="@font/poppins_medium"
         android:text="Masuk"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
