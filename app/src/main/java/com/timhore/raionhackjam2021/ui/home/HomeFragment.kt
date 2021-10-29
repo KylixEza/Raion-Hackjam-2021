@@ -52,7 +52,8 @@ class HomeFragment : Fragment() {
             rvLetsShopPlants.apply {
                 adapter = homeShopAdapter
                 layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                viewModel.getAllPlants().observe(viewLifecycleOwner, ::homeShopObserver)
+                val listOfPlant = viewModel.getAllPlants()
+                homeShopObserver(listOfPlant)
             }
         }
     }

@@ -15,7 +15,6 @@ import org.koin.dsl.module
 val viewModelModule = module {
     viewModel { HomeViewModel() }
     viewModel { ProfileViewModel() }
-    viewModel { RecommendationViewModel() }
     viewModel { MarketViewModel() }
     viewModel { SearchViewModel() }
     viewModel { DetailViewModel() }

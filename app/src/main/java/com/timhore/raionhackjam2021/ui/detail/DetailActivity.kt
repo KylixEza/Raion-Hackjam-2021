@@ -24,7 +24,9 @@ class DetailActivity : AppCompatActivity() {
 
         val plantId = "PLANT001"
 
-        viewModel.getDetailPlant(plantId).observe(this, ::detailPlantObserver)
+        val plant = viewModel.getDetailPlant(plantId)
+        detailPlantObserver(plant)
+
     }
 
     private fun detailPlantObserver(plant: Plant?) {

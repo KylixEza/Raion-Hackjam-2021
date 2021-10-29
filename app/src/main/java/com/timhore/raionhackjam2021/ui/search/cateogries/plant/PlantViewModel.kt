@@ -10,5 +10,4 @@ class PlantViewModel : ViewModel() {
     fun getPlantsSearch(query: String) =
         Dummy
             .getPlantsSearch(query)
-            .asLiveData(Dispatchers.IO)
 }

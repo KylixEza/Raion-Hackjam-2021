@@ -1,6 +1,7 @@
 package com.timhore.raionhackjam2021.data
 
 import com.timhore.raionhackjam2021.R
+import com.timhore.raionhackjam2021.data.Dummy.getAllPlants
 import com.timhore.raionhackjam2021.model.Event
 import com.timhore.raionhackjam2021.model.Plant
 import kotlinx.coroutines.CoroutineScope
@@ -10,8 +11,7 @@ import kotlinx.coroutines.launch
 
 object Dummy {
 
-    fun getAllPlants(): Flow<List<Plant>> = flow {
-        val listOfPlants = arrayListOf<Plant>(
+    fun getAllPlants(): List<Plant> = arrayListOf<Plant>(
             Plant(
                 "PLANT001",
                 "Lidah Buaya",
@@ -186,8 +186,6 @@ object Dummy {
                 25
             )
         )
-        emit(listOfPlants)
-    }.flowOn(Dispatchers.IO)
 
     fun getAllTrendingEvents(): Flow<List<Event>> = flow {
         val listOfTrendingEvents: List<Event> = arrayListOf(
@@ -261,52 +259,37 @@ object Dummy {
         emit(listOfTrendingPlants)
     }.flowOn(Dispatchers.IO)
 
-    fun getDetailPlant(plantId: String) = flow<Plant> {
-        getAllPlants().map { listPlants ->
-            listPlants.forEach { plant ->
-                if (plant.id == plantId) {
-                    emit(plant)
-                }
-            }
-        }
-    }.flowOn(Dispatchers.IO)
+    fun getDetailPlant(plantId: String): Plant? {
 
-    fun getPlantsSearch(query: String) = flow<List<Plant>> {
-        val results = ArrayList<Plant>()
+        var plantResult: Plant? = null
 
-        getAllPlants().map { list ->
-            list.forEach { plant ->
-                if (plant.name.contains(query))
-                    results.add(plant)
-            }
-            emit(results)
+        for (plant in getAllPlants()) {
+            if (plant.id == plantId)
+                plantResult = plant
         }
 
-    }.flowOn(Dispatchers.IO)
-
-    fun getProductsSearch(query: String) = flow<List<Plant>> {
-        val results = ArrayList<Plant>()
-
-        getAllPlants().map { list ->
-            list.forEach { plant ->
-                if (plant.name.contains(query, true))
-                    results.add(plant)
-            }
-            emit(results)
-        }
+        return plantResult
     }
 
-    fun getArticleSearch(query: String) = flow<List<Plant>> {
+    fun getPlantsSearch(query: String): List<Plant> {
         val results = ArrayList<Plant>()
 
-        getAllPlants().map { list ->
-            list.forEach { plant ->
-                if (plant.name.contains(query))
-                    results.add(plant)
-            }
-            emit(results)
+        for (plant in getAllPlants()) {
+            if (plant.name.contains(query, false))
+                results.add(plant)
         }
+        return results
     }
+
+    fun getProductsSearch(query: String): List<Plant> {
+        val results = ArrayList<Plant>()
+        for (plant in getAllPlants()) {
+            if (plant.name.contains(query, false))
+                results.add(plant)
+        }
+        return results
+    }
+
 
     fun getRecommendationPlant() = flow<List<Plant>> {
         emit(

@@ -9,5 +9,5 @@ class HomeViewModel : ViewModel() {
 
     fun getAllTrendingEvents() = Dummy.getAllTrendingEvents().asLiveData(Dispatchers.IO)
     fun getAllTrendingPlants() = Dummy.getAllTrendingPlants().asLiveData(Dispatchers.IO)
-    fun getAllPlants() = Dummy.getAllPlants().asLiveData(Dispatchers.IO)
+    fun getAllPlants() = Dummy.getAllPlants()
 }

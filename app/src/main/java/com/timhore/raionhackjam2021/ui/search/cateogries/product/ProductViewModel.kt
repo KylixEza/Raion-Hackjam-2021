@@ -10,5 +10,4 @@ class ProductViewModel : ViewModel() {
     fun getProductsSearch(query: String) =
         Dummy
             .getProductsSearch(query)
-            .asLiveData(Dispatchers.IO)
 }

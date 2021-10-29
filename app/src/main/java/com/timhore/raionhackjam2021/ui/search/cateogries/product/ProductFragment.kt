@@ -35,7 +35,8 @@ class ProductFragment : Fragment() {
         binding.rvSearchProduct.apply {
             adapter = this@ProductFragment.adapter
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-            viewModel.getProductsSearch(Constanta.QUERY).observe(viewLifecycleOwner, ::observer)
+            val list = viewModel.getProductsSearch(Constanta.QUERY)
+            observer(list)
         }
     }
 

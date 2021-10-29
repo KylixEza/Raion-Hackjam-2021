@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.viewbinding.library.fragment.viewBinding
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.timhore.raionhackjam2021.R
 import com.timhore.raionhackjam2021.adapter.PlantAdapter
@@ -34,7 +35,7 @@ class RecommendationFragment : Fragment() {
 
         binding.rvRecommendation.apply {
             adapter = recommendationAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            layoutManager = GridLayoutManager(requireContext(), 2)
             viewModel.getRecommendationPlant().observe(viewLifecycleOwner, ::observer)
         }
     }

@@ -35,7 +35,8 @@ class PlantFragment : Fragment() {
         binding.rvSearchPlant.apply {
             adapter = this@PlantFragment.adapter
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            viewModel.getPlantsSearch(Constanta.QUERY).observe(viewLifecycleOwner, ::observer)
+            val list = viewModel.getPlantsSearch(Constanta.QUERY)
+            observer(list)
         }
     }
 

@@ -10,5 +10,4 @@ class DetailViewModel: ViewModel() {
     fun getDetailPlant(plantId: String) =
         Dummy
             .getDetailPlant(plantId)
-            .asLiveData(Dispatchers.IO)
 }

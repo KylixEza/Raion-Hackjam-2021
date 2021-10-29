@@ -23,9 +23,6 @@
             android:id="@+id/action_home_destination_to_marketFragment"
             app:destination="@id/navigation_market" />
         <action
-            android:id="@+id/action_navigation_home_to_detailActivity"
-            app:destination="@id/detailActivity" />
-        <action
             android:id="@+id/action_navigation_home_to_plantDetailActivity"
             app:destination="@id/plant_detail_destination" />
         <action
@@ -56,11 +53,19 @@
         android:id="@+id/product_detail_destination"
         android:name="com.timhore.raionhackjam2021.ui.detail.product.ProductDetailActivity"
         android:label="activity_product_detail"
-        tools:layout="@layout/activity_product_detail" />
+        tools:layout="@layout/activity_product_detail" >
+        <argument
+            android:name="plantId"
+            app:argType="string" />
+    </activity>
     <activity
         android:id="@+id/plant_detail_destination"
         android:name="com.timhore.raionhackjam2021.ui.detail.plant.PlantDetailActivity"
-        android:label="PlantDetailActivity" />
+        android:label="PlantDetailActivity" >
+        <argument
+            android:name="plantId"
+            app:argType="string" />
+    </activity>
 
 
 </navigation>

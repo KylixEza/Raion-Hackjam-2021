@@ -36,7 +36,7 @@ class HomeRecommendationAdapter: RecyclerView.Adapter<HomeRecommendationAdapter.
             view.tvTitle.text = plant.name
             itemView.setOnClickListener {
                 it.findNavController().navigate(HomeFragmentDirections
-                    .actionNavigationHomeToDetailActivity(plant.id))
+                    .actionNavigationHomeToPlantDetailActivity(plant.id))
             }
         }
     }

@@ -53,7 +53,7 @@ class PlantAdapter: RecyclerView.Adapter<PlantAdapter.PlantViewHolder>() {
             }
             itemView.setOnClickListener {
                 it.findNavController().navigate(HomeFragmentDirections
-                    .actionNavigationHomeToDetailActivity(plant.id))
+                    .actionNavigationHomeToProductDetailActivity(plant.id))
             }
         }
     }

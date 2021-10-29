@@ -12,18 +12,16 @@ import com.timhore.raionhackjam2021.adapter.SearchProductAdapter
 import com.timhore.raionhackjam2021.databinding.FragmentHomeBinding
 import com.timhore.raionhackjam2021.databinding.FragmentMarketBinding
 import com.timhore.raionhackjam2021.model.Plant
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MarketFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = MarketFragment()
-    }
-
-    private lateinit var viewModel: MarketViewModel
 
     private var _binding: FragmentMarketBinding? = null
     private val binding get() = _binding
     private lateinit var diskonSpesialAdapter : SearchProductAdapter
+    private lateinit var tanamanSpesialAdapter: SearchProductAdapter
+    private val viewModel: MarketViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,26 +32,27 @@ class MarketFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MarketViewModel::class.java)
 
+        tanamanSpesialAdapter = SearchProductAdapter()
         diskonSpesialAdapter = SearchProductAdapter()
 
         binding?.apply {
             rvDiskonSpesial.apply {
                 adapter = diskonSpesialAdapter
                 layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                viewModel.getPlants().observe(viewLifecycleOwner, ::diskonSpesialObserver)
             }
             rvTanamanLaris.apply {
                 adapter = diskonSpesialAdapter
                 layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                viewModel.getPlants().observe(viewLifecycleOwner, ::tanamanLarisObserver)
             }
 
         }
 
     }
 
-//    private fun diskonSpesialObserver(list: List<Plant>?) = list?.let { SearchProductAdapter.setAllItems(it) }
-
-//    private fun tanamanLarisObserver(list: List<Plant>?) = list?.let { SearchProductAdapter.setAllItems(it) }
+    private fun diskonSpesialObserver(list: List<Plant>?) = list?.let { diskonSpesialAdapter.setAllItems(it) }
+    private fun tanamanLarisObserver(list: List<Plant>?) = list?.let { tanamanSpesialAdapter.setAllItems(it) }
 
 }

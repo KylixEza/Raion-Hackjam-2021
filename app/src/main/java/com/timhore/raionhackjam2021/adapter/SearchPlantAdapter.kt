@@ -2,12 +2,14 @@ package com.timhore.raionhackjam2021.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.timhore.raionhackjam2021.adapter.diffutil.PlantDiffUtilCallback
 import com.timhore.raionhackjam2021.databinding.ItemListSearchPlantBinding
 import com.timhore.raionhackjam2021.model.Plant
+import com.timhore.raionhackjam2021.ui.home.HomeFragmentDirections
 
 class SearchPlantAdapter: RecyclerView.Adapter<SearchPlantAdapter.SearchPlantViewHolder>() {
 
@@ -45,6 +47,10 @@ class SearchPlantAdapter: RecyclerView.Adapter<SearchPlantAdapter.SearchPlantVie
                     .into(ivPlant)
                 tvTitle.text = plant.name
                 tvLatinName.text = plant.latinName
+                itemView.setOnClickListener {
+                    it.findNavController().navigate(HomeFragmentDirections
+                        .actionNavigationHomeToProductDetailActivity(plant.id))
+                }
             }
         }
 
