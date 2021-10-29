@@ -10,10 +10,6 @@ import com.timhore.raionhackjam2021.R
 
 class RecommendationFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = RecommendationFragment()
-    }
-
     private lateinit var viewModel: RecommendationViewModel
 
     override fun onCreateView(

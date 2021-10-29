@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_home_destination_to_marketFragment"
             app:destination="@id/navigation_market" />
+        <action
+            android:id="@+id/action_navigation_home_to_detailActivity"
+            app:destination="@id/detailActivity" />
     </fragment>
     <fragment
         android:id="@+id/navigation_search"
@@ -43,4 +46,11 @@
         android:name="com.timhore.raionhackjam2021.ui.market.MarketFragment"
         android:label="Market"
         tools:layout="@layout/fragment_market" />
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.timhore.raionhackjam2021.ui.detail.DetailActivity"
+        android:label="DetailActivity" >
+        <argument android:name="plantId"
+            app:argType="string" />
+    </activity>
 </navigation>

@@ -52,6 +52,8 @@ class PlantAdapter: RecyclerView.Adapter<PlantAdapter.PlantViewHolder>() {
                 tvPrice.text = String.format("Rp ${Formatting.rupiahCurrencyFormatting(plant.price)}")
             }
             itemView.setOnClickListener {
+                it.findNavController().navigate(HomeFragmentDirections
+                    .actionNavigationHomeToDetailActivity(plant.id))
             }
         }
     }

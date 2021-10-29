@@ -2,12 +2,14 @@ package com.timhore.raionhackjam2021.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.timhore.raionhackjam2021.adapter.diffutil.PlantDiffUtilCallback
 import com.timhore.raionhackjam2021.databinding.ItemListHomeRecommendationBinding
 import com.timhore.raionhackjam2021.model.Plant
+import com.timhore.raionhackjam2021.ui.home.HomeFragmentDirections
 
 class HomeRecommendationAdapter: RecyclerView.Adapter<HomeRecommendationAdapter.HomeViewHolder>() {
 
@@ -32,6 +34,10 @@ class HomeRecommendationAdapter: RecyclerView.Adapter<HomeRecommendationAdapter.
                 .load(plant.image)
                 .into(view.ivPlant)
             view.tvTitle.text = plant.name
+            itemView.setOnClickListener {
+                it.findNavController().navigate(HomeFragmentDirections
+                    .actionNavigationHomeToDetailActivity(plant.id))
+            }
         }
     }
 
