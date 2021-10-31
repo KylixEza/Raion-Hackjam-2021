@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:text="@string/trending_events"
+                android:text="Article"
                 android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/black"
                 android:textSize="16sp"

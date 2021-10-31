@@ -10,4 +10,9 @@ class DetailViewModel: ViewModel() {
     fun getDetailPlant(plantId: String) =
         Dummy
             .getDetailPlant(plantId)
+
+    fun getRelatePlant() =
+        Dummy
+            .getAllTrendingPlants()
+            .asLiveData(Dispatchers.IO)
 }
